@@ -8,6 +8,28 @@ const entries = [];
 
 function main() {
     document.getElementById("add-btn").onclick = addEntry;
+
+    /* Set Date */
+    const daysOfWeek= ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const monthsOfYear = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const date = new Date();
+    let day = date.getDay();
+    let month = date.getMonth();
+    let numDate = date.getDate();
+    let year = date.getFullYear();
+    let ordinalIndicator = "";
+    let lastDateDigit = numDate % 10;
+    if (lastDateDigit == 1) {
+        ordinalIndicator = "st";
+    } else if (lastDateDigit == 2) {
+        ordinalIndicator = "nd";
+    } else if (lastDateDigit == 3) {
+        ordinalIndicator = "rd";
+    } else {
+        ordinalIndicator = "th";
+    }
+    let displayDate = `${daysOfWeek[day]}, ${monthsOfYear[month]} ${numDate}${ordinalIndicator} ${year}`;
+    document.getElementById("title-date").innerHTML = displayDate;
 }
 
 function addEntry(event) {
