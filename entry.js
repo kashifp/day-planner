@@ -11,7 +11,9 @@ class Entry {
         this.#type = type;
     }
 
-    
-}
+    getEntryHTML() {
+        let display = "<div>";
+        return `<h3>${this.#startTime}-${this.#endTime}: ${this.#activity}</h3>`;
+    }
 
-module.exports = Entry;
+}

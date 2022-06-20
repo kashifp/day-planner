@@ -9,16 +9,18 @@
   <body>
     <h1>Day Planner</h1>
 
-    
+    <div id="display-entries">
 
-    <form>
+    </div>    
+
+    <form id="input-form">
         <label for="">Time - Time: Activity (ex: 8:00 am - 8:30 am: Breakfast)</label>
         <br>
-        <input type="text" required>
+        <input id="startTime" type="text" required>
         <label>-</label>
-        <input type="text" required>
+        <input id="endTime" type="text" required>
         <label>:</label>
-        <input type="text" required>
+        <input id="activity" type="text" required>
         <select id="type" required>
             <option value="Entertainment">Entertainment</option>
             <option value="Food">Food</option>
@@ -38,6 +40,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="entry.js"></script>
     <script src="planner.js"></script>
   </body>
 </html>
