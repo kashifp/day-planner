@@ -41,7 +41,7 @@ function displayEntries() {
 function displayChart() {
     let xValues = []
     let yValues = []
-    let barColors = ["orange", "navyblue", "skyblue", "yellow", "green", "darkred"];
+    let barColors = ["orange", "navy", "skyblue", "yellow", "green", "darkred"];
     entries.map((currentValue, index) => {
         if (!xValues.includes(currentValue.getType())) {
             xValues.push(currentValue.getType());
