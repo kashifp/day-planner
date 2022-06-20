@@ -11,6 +11,10 @@ class Entry {
         this.#type = type;
     }
 
+    getType() {
+        return this.#type;
+    }
+
     getEntryHTML() {
         let display = "<div>";
         return `<h3>${this.#startTime}-${this.#endTime}: ${this.#activity}</h3>`;

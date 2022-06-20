@@ -34,4 +34,41 @@ function displayEntries() {
         newDisplay += currentValue.getEntryHTML() + "\n";
     });
     document.getElementById("display-entries").innerHTML = newDisplay;
+
+    displayChart();
+}
+
+function displayChart() {
+    let xValues = []
+    let yValues = []
+    let barColors = ["orange", "navyblue", "skyblue", "yellow", "green", "darkred"];
+    entries.map((currentValue, index) => {
+        if (!xValues.includes(currentValue.getType())) {
+            xValues.push(currentValue.getType());
+            yValues.push(1);
+        } else {
+            let xPosition = xValues.findIndex((currType) => {
+                return currType == currentValue.getType();
+            });
+            yValues[xPosition] += 1;
+        }
+
+    });
+
+    let chart = new Chart("myChart", {
+        type: "doughnut",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Activity Types"
+          }
+        }
+    });
 }
