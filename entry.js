@@ -16,8 +16,8 @@ class Entry {
     }
 
     getEntryHTML() {
-        let display = "<div>";
-        return `<h3>${this.#startTime}-${this.#endTime}: ${this.#activity}</h3>`;
+        let checkbox = `<input type="checkbox">`;
+        return checkbox + `<h3 style="display: inline-block;">${this.#startTime}-${this.#endTime}: ${this.#activity}</h3><br>`;
     }
 
 }

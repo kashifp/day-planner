@@ -53,7 +53,7 @@ function displayEntries() {
     document.getElementById("display-entries").innerHTML = "";
     let newDisplay = "";
     entries.map((currentValue, index) => {
-        newDisplay += currentValue.getEntryHTML() + "\n";
+        newDisplay += currentValue.getEntryHTML();
     });
     document.getElementById("display-entries").innerHTML = newDisplay;
 
