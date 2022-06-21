@@ -78,7 +78,7 @@ function displayChart() {
     });
 
     let chart = new Chart("myChart", {
-        type: "doughnut",
+        type: "pie",
         data: {
           labels: xValues,
           datasets: [{
