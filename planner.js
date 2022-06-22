@@ -64,8 +64,9 @@ function addEntry(event) {
     li.appendChild(span);
     
     /* Delete function for li element */
-    span.onclick = function() {
+    span.onclick = () => {
         li.style.display = "none";
+        displayChart();
     }
 
     /* Add entry to list */
@@ -76,7 +77,8 @@ function addEntry(event) {
     document.getElementById("endTime").value = "";
     document.getElementById("activity").value = "";
 
-    
+    /* Rendering the pie chart */
+    displayChart();
 }
 
 // function displayEntries() {
@@ -89,38 +91,60 @@ function addEntry(event) {
 
 //     displayChart();
 // }
-
 // function displayChart() {
-//     let xValues = []
-//     let yValues = []
-//     let barColors = ["orange", "navy", "skyblue", "yellow", "green", "darkred"];
-//     entries.map((currentValue, index) => {
-//         if (!xValues.includes(currentValue.getType())) {
-//             xValues.push(currentValue.getType());
-//             yValues.push(1);
-//         } else {
-//             let xPosition = xValues.findIndex((currType) => {
-//                 return currType == currentValue.getType();
-//             });
-//             yValues[xPosition] += 1;
-//         }
 
-//     });
-
-//     let chart = new Chart("myChart", {
-//         type: "pie",
-//         data: {
-//           labels: xValues,
-//           datasets: [{
-//             backgroundColor: barColors,
-//             data: yValues
-//           }]
-//         },
-//         options: {
-//           title: {
-//             display: true,
-//             text: "Activity Types"
-//           }
-//         }
-//     });
 // }
+function displayChart() {
+    let xValues = []
+    let yValues = []
+    let barColors = ["orange", "navy", "skyblue", "darkyellow", "darkgreen", "darkred"];
+
+
+    let types = document.getElementsByClassName("activity-type");
+    for (let tSpan of types) {
+        // console.log(tSpan.innerHTML);
+        if (tSpan.parentElement.style.display != "none") { //only counting elements that are currently displayed
+            let currentValue = tSpan.innerHTML;
+            if (!xValues.includes(currentValue)) {
+                xValues.push(currentValue);
+                yValues.push(1);
+            } else {
+                let xPosition = xValues.findIndex((currType) => {
+                    return currType == currentValue;
+                });
+                yValues[xPosition] += 1;
+            }
+        }
+    }
+    // console.log(types);
+
+    // entries.map((currentValue, index) => {
+    //     if (!xValues.includes(currentValue.getType())) {
+    //         xValues.push(currentValue.getType());
+    //         yValues.push(1);
+    //     } else {
+    //         let xPosition = xValues.findIndex((currType) => {
+    //             return currType == currentValue.getType();
+    //         });
+    //         yValues[xPosition] += 1;
+    //     }
+
+    // });
+
+    let chart = new Chart("myChart", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Activity Types"
+          }
+        }
+    });
+}
