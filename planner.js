@@ -3,9 +3,7 @@
 
 
 window.onload = main;
-
-const entries = [];
-
+entries = []
 function main() {
     document.getElementById("add-btn").onclick = addEntry;
 
