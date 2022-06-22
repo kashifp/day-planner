@@ -51,6 +51,12 @@ function addEntry(event) {
     let entryText = document.createTextNode(newEntry.getEntry());
     li.appendChild(entryText);
 
+    let typeSpan = document.createElement("span");
+    typeSpan.className = "activity-type";
+    let typeText = document.createTextNode(newEntry.getType());
+    typeSpan.appendChild(typeText);
+    li.appendChild(typeSpan);
+
     let span = document.createElement("span");
     span.className = "delete-entry";
     let xText = document.createTextNode("X");
@@ -64,6 +70,13 @@ function addEntry(event) {
 
     /* Add entry to list */
     document.getElementById("entry-list").appendChild(li);
+
+    /* Clear input fields */
+    document.getElementById("startTime").value = "";
+    document.getElementById("endTime").value = "";
+    document.getElementById("activity").value = "";
+
+    
 }
 
 // function displayEntries() {
