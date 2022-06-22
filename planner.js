@@ -48,6 +48,16 @@ function addEntry(event) {
     console.log(startTime + endTime + activity + type);
 
     let li = document.createElement("li");
+    let checkSpan = document.createElement("span");
+    let checkText = document.createTextNode("✓");
+    checkSpan.appendChild(checkText);
+    li.appendChild(checkSpan);
+    checkSpan.onclick = () => {
+        li.classList.toggle("checkedEntry");
+    };
+    
+
+
     let entryText = document.createTextNode(newEntry.getEntry());
     li.appendChild(entryText);
 
@@ -67,7 +77,7 @@ function addEntry(event) {
     span.onclick = () => {
         li.style.display = "none";
         displayChart();
-    }
+    };
 
     /* Add entry to list */
     document.getElementById("entry-list").appendChild(li);
@@ -81,19 +91,6 @@ function addEntry(event) {
     displayChart();
 }
 
-// function displayEntries() {
-//     document.getElementById("display-entries").innerHTML = "";
-//     let newDisplay = "";
-//     entries.map((currentValue, index) => {
-//         newDisplay += currentValue.getEntryHTML();
-//     });
-//     document.getElementById("display-entries").innerHTML = newDisplay;
-
-//     displayChart();
-// }
-// function displayChart() {
-
-// }
 function displayChart() {
     let xValues = []
     let yValues = []
