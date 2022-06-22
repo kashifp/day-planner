@@ -1,0 +1,60 @@
+/* Everything */
+* {
+    /* background-color: rgb(60, 60, 60);
+    color: white; */
+}
+
+/* Check mark */
+#entry-list li.checkedEntry {
+    text-decoration: line-through;
+    background: #888;
+    color: #fff;
+}
+#entry-list li.checkedEntry {
+    text-decoration: line-through;
+}
+
+/* Body font */
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 10%;
+}
+
+/* List Cover */
+/* #display-entries {
+    margin-top: 10px;
+    width: fit-content;
+    border: solid black 2px;
+    border-radius: 25px;
+    padding-right: 20px;
+    padding-top: 10px;
+
+} */
+
+/* Entry Styling */
+#entry-list li {
+    list-style-type: none;
+    font-size: 24px;
+
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* text-decoration: underline; */
+}
+
+#entry-list li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+#entry-list li:hover {
+    background: #ddd;
+}

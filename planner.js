@@ -48,11 +48,11 @@ function addEntry(event) {
     console.log(startTime + endTime + activity + type);
 
     let li = document.createElement("li");
-    let checkSpan = document.createElement("span");
-    let checkText = document.createTextNode("✓");
-    checkSpan.appendChild(checkText);
-    li.appendChild(checkSpan);
-    checkSpan.onclick = () => {
+    // let checkSpan = document.createElement("span");
+    // let checkText = document.createTextNode("✓");
+    // checkSpan.appendChild(checkText);
+    // li.appendChild(checkSpan);
+    li.onclick = () => {
         li.classList.toggle("checkedEntry");
     };
     
