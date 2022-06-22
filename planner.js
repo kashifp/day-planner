@@ -3,9 +3,7 @@
 
 
 window.onload = main;
-
-const entries = [];
-
+// entries = []
 function main() {
     document.getElementById("add-btn").onclick = addEntry;
 
@@ -33,7 +31,7 @@ function main() {
 }
 
 function addEntry(event) {
-    event.preventDefault();
+    // event.preventDefault();
     let startTime = document.getElementById("startTime").value;
     let endTime = document.getElementById("endTime").value;
     let activity = document.getElementById("activity").value;
@@ -41,41 +39,94 @@ function addEntry(event) {
 
     let newEntry = new Entry(startTime, endTime, activity, type);
 
-    entries.push(newEntry);
+    // entries.push(newEntry);
 
-    document.getElementById("input-form").reset();
-    displayEntries();    
+    // document.getElementById("input-form").reset();
+    // displayEntries();
 
-    // console.log(startTime + endTime + activity + type);
-}
 
-function displayEntries() {
-    document.getElementById("display-entries").innerHTML = "";
-    let newDisplay = "";
-    entries.map((currentValue, index) => {
-        newDisplay += currentValue.getEntryHTML();
-    });
-    document.getElementById("display-entries").innerHTML = newDisplay;
+    console.log(startTime + endTime + activity + type);
 
+    let li = document.createElement("li");
+    let checkSpan = document.createElement("span");
+    let checkText = document.createTextNode("✓");
+    checkSpan.appendChild(checkText);
+    li.appendChild(checkSpan);
+    checkSpan.onclick = () => {
+        li.classList.toggle("checkedEntry");
+    };
+    
+
+
+    let entryText = document.createTextNode(newEntry.getEntry());
+    li.appendChild(entryText);
+
+    let typeSpan = document.createElement("span");
+    typeSpan.className = "activity-type";
+    let typeText = document.createTextNode(newEntry.getType());
+    typeSpan.appendChild(typeText);
+    li.appendChild(typeSpan);
+
+    let span = document.createElement("span");
+    span.className = "delete-entry";
+    let xText = document.createTextNode("X");
+    span.appendChild(xText);
+    li.appendChild(span);
+    
+    /* Delete function for li element */
+    span.onclick = () => {
+        li.style.display = "none";
+        displayChart();
+    };
+
+    /* Add entry to list */
+    document.getElementById("entry-list").appendChild(li);
+
+    /* Clear input fields */
+    document.getElementById("startTime").value = "";
+    document.getElementById("endTime").value = "";
+    document.getElementById("activity").value = "";
+
+    /* Rendering the pie chart */
     displayChart();
 }
 
 function displayChart() {
     let xValues = []
     let yValues = []
-    let barColors = ["orange", "navy", "skyblue", "yellow", "green", "darkred"];
-    entries.map((currentValue, index) => {
-        if (!xValues.includes(currentValue.getType())) {
-            xValues.push(currentValue.getType());
-            yValues.push(1);
-        } else {
-            let xPosition = xValues.findIndex((currType) => {
-                return currType == currentValue.getType();
-            });
-            yValues[xPosition] += 1;
-        }
+    let barColors = ["orange", "navy", "skyblue", "darkyellow", "darkgreen", "darkred"];
 
-    });
+
+    let types = document.getElementsByClassName("activity-type");
+    for (let tSpan of types) {
+        // console.log(tSpan.innerHTML);
+        if (tSpan.parentElement.style.display != "none") { //only counting elements that are currently displayed
+            let currentValue = tSpan.innerHTML;
+            if (!xValues.includes(currentValue)) {
+                xValues.push(currentValue);
+                yValues.push(1);
+            } else {
+                let xPosition = xValues.findIndex((currType) => {
+                    return currType == currentValue;
+                });
+                yValues[xPosition] += 1;
+            }
+        }
+    }
+    // console.log(types);
+
+    // entries.map((currentValue, index) => {
+    //     if (!xValues.includes(currentValue.getType())) {
+    //         xValues.push(currentValue.getType());
+    //         yValues.push(1);
+    //     } else {
+    //         let xPosition = xValues.findIndex((currType) => {
+    //             return currType == currentValue.getType();
+    //         });
+    //         yValues[xPosition] += 1;
+    //     }
+
+    // });
 
     let chart = new Chart("myChart", {
         type: "pie",

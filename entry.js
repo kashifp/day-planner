@@ -5,9 +5,9 @@ class Entry {
     #type;
 
     constructor(sTime, eTime, act, type) {
-        this.#startTime = sTime;
-        this.#endTime = eTime;
-        this.#activity = act;
+        this.#startTime = sTime.length > 0 ? sTime : "00:00";
+        this.#endTime = eTime.length > 0 ? eTime : "00:00";
+        this.#activity = act.length > 0 ? act : "Nothing?";
         this.#type = type;
     }
 
@@ -15,9 +15,8 @@ class Entry {
         return this.#type;
     }
 
-    getEntryHTML() {
-        let checkbox = `<input type="checkbox">`;
-        return checkbox + `<h3 style="display: inline-block;">${this.#startTime}-${this.#endTime}: ${this.#activity}</h3><br>`;
+    getEntry() {
+        return `${this.#startTime}-${this.#endTime}: ${this.#activity}`;
     }
 
 }
