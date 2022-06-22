@@ -3,7 +3,7 @@
 
 
 window.onload = main;
-entries = []
+// entries = []
 function main() {
     document.getElementById("add-btn").onclick = addEntry;
 
@@ -31,7 +31,7 @@ function main() {
 }
 
 function addEntry(event) {
-    event.preventDefault();
+    // event.preventDefault();
     let startTime = document.getElementById("startTime").value;
     let endTime = document.getElementById("endTime").value;
     let activity = document.getElementById("activity").value;
@@ -39,56 +39,75 @@ function addEntry(event) {
 
     let newEntry = new Entry(startTime, endTime, activity, type);
 
-    entries.push(newEntry);
+    // entries.push(newEntry);
 
-    document.getElementById("input-form").reset();
-    displayEntries();    
+    // document.getElementById("input-form").reset();
+    // displayEntries();
 
-    // console.log(startTime + endTime + activity + type);
+
+    console.log(startTime + endTime + activity + type);
+
+    let li = document.createElement("li");
+    let entryText = document.createTextNode(newEntry.getEntry());
+    li.appendChild(entryText);
+
+    let span = document.createElement("span");
+    span.className = "delete-entry";
+    let xText = document.createTextNode("X");
+    span.appendChild(xText);
+    li.appendChild(span);
+    
+    /* Delete function for li element */
+    span.onclick = function() {
+        li.style.display = "none";
+    }
+
+    /* Add entry to list */
+    document.getElementById("entry-list").appendChild(li);
 }
 
-function displayEntries() {
-    document.getElementById("display-entries").innerHTML = "";
-    let newDisplay = "";
-    entries.map((currentValue, index) => {
-        newDisplay += currentValue.getEntryHTML();
-    });
-    document.getElementById("display-entries").innerHTML = newDisplay;
+// function displayEntries() {
+//     document.getElementById("display-entries").innerHTML = "";
+//     let newDisplay = "";
+//     entries.map((currentValue, index) => {
+//         newDisplay += currentValue.getEntryHTML();
+//     });
+//     document.getElementById("display-entries").innerHTML = newDisplay;
 
-    displayChart();
-}
+//     displayChart();
+// }
 
-function displayChart() {
-    let xValues = []
-    let yValues = []
-    let barColors = ["orange", "navy", "skyblue", "yellow", "green", "darkred"];
-    entries.map((currentValue, index) => {
-        if (!xValues.includes(currentValue.getType())) {
-            xValues.push(currentValue.getType());
-            yValues.push(1);
-        } else {
-            let xPosition = xValues.findIndex((currType) => {
-                return currType == currentValue.getType();
-            });
-            yValues[xPosition] += 1;
-        }
+// function displayChart() {
+//     let xValues = []
+//     let yValues = []
+//     let barColors = ["orange", "navy", "skyblue", "yellow", "green", "darkred"];
+//     entries.map((currentValue, index) => {
+//         if (!xValues.includes(currentValue.getType())) {
+//             xValues.push(currentValue.getType());
+//             yValues.push(1);
+//         } else {
+//             let xPosition = xValues.findIndex((currType) => {
+//                 return currType == currentValue.getType();
+//             });
+//             yValues[xPosition] += 1;
+//         }
 
-    });
+//     });
 
-    let chart = new Chart("myChart", {
-        type: "pie",
-        data: {
-          labels: xValues,
-          datasets: [{
-            backgroundColor: barColors,
-            data: yValues
-          }]
-        },
-        options: {
-          title: {
-            display: true,
-            text: "Activity Types"
-          }
-        }
-    });
-}
+//     let chart = new Chart("myChart", {
+//         type: "pie",
+//         data: {
+//           labels: xValues,
+//           datasets: [{
+//             backgroundColor: barColors,
+//             data: yValues
+//           }]
+//         },
+//         options: {
+//           title: {
+//             display: true,
+//             text: "Activity Types"
+//           }
+//         }
+//     });
+// }
