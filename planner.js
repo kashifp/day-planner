@@ -100,7 +100,7 @@ function addEntry(event) {
 function displayChart() {
     let xValues = []
     let yValues = []
-    let barColors = ["orange", "navy", "skyblue", "blueviolet", "darkgreen", "darkred"];
+    let barColors = ["orange", "skyblue", "pink", "blueviolet", "green", "red"];
 
     let types = document.getElementsByClassName("activity-type");
 
