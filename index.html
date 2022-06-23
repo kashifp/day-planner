@@ -24,11 +24,11 @@
     <!-- <label for=""></label> -->
     <h4>Time - Time: Activity (ex: 8:00 am - 8:30 am: Breakfast)</h4>
     <br>
-    <input id="startTime" type="text" autocomplete="off" placeholder="8:00 am">
+    <input id="startTime" type="text" autocomplete="off" placeholder="8:00 am" maxlength="8">
     <label>-</label>
-    <input id="endTime" type="text" autocomplete="off" placeholder="8:30 am">
+    <input id="endTime" type="text" autocomplete="off" placeholder="8:30 am" maxlength="8">
     <label>:</label>
-    <input id="activity" type="text" autocomplete="off" placeholder="Morning Run">
+    <input id="activity" type="text" autocomplete="off" placeholder="Morning Run" maxlength="30">
     <select id="type" required>
       <option value="Entertainment">Entertainment</option>
       <option value="Exercise">Exercise</option>
@@ -40,11 +40,11 @@
     
     <button id="add-btn">+</button>
 
-    <div id="display-entries">
+    <!-- <div id="display-entries"> -->
       <ul id="entry-list">
 
       </ul>
-    </div>   
+    <!-- </div>    -->
 
 
     <br>

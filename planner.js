@@ -3,7 +3,7 @@
 
 
 window.onload = main;
-// entries = []
+
 function main() {
     document.getElementById("add-btn").onclick = addEntry;
 
@@ -48,18 +48,23 @@ function addEntry(event) {
     console.log(startTime + endTime + activity + type);
 
     let li = document.createElement("li");
+
     // let checkSpan = document.createElement("span");
     // let checkText = document.createTextNode("✓");
     // checkSpan.appendChild(checkText);
     // li.appendChild(checkSpan);
-    li.onclick = () => {
-        li.classList.toggle("checkedEntry");
-    };
-    
 
 
     let entryText = document.createTextNode(newEntry.getEntry());
-    li.appendChild(entryText);
+    let entrySpan = document.createElement("span");
+    
+    entrySpan.className = "timeName";
+    entrySpan.appendChild(entryText);
+    li.appendChild(entrySpan);
+
+    li.onclick = () => {
+        li.classList.toggle("checkedEntry");
+    };
 
     let typeSpan = document.createElement("span");
     typeSpan.className = "activity-type";
@@ -78,6 +83,7 @@ function addEntry(event) {
         li.style.display = "none";
         displayChart();
     };
+    
 
     /* Add entry to list */
     document.getElementById("entry-list").appendChild(li);
@@ -94,21 +100,25 @@ function addEntry(event) {
 function displayChart() {
     let xValues = []
     let yValues = []
-    let barColors = ["orange", "navy", "skyblue", "darkyellow", "darkgreen", "darkred"];
-
+    let barColors = ["orange", "navy", "skyblue", "blueviolet", "darkgreen", "darkred"];
 
     let types = document.getElementsByClassName("activity-type");
+
     for (let tSpan of types) {
         // console.log(tSpan.innerHTML);
         if (tSpan.parentElement.style.display != "none") { //only counting elements that are currently displayed
             let currentValue = tSpan.innerHTML;
             if (!xValues.includes(currentValue)) {
+                /* test */
+                    tSpan.style.backgroundColor = barColors[xValues.length];
+                //
                 xValues.push(currentValue);
                 yValues.push(1);
             } else {
                 let xPosition = xValues.findIndex((currType) => {
                     return currType == currentValue;
                 });
+                tSpan.style.backgroundColor = barColors[xPosition];
                 yValues[xPosition] += 1;
             }
         }

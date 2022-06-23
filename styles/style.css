@@ -4,15 +4,7 @@
     color: white; */
 }
 
-/* Check mark */
-#entry-list li.checkedEntry {
-    text-decoration: line-through;
-    background: #888;
-    color: #fff;
-}
-#entry-list li.checkedEntry {
-    text-decoration: line-through;
-}
+
 
 /* Body font */
 body {
@@ -57,4 +49,54 @@ body {
 
 #entry-list li:hover {
     background: #ddd;
+}
+
+/* Check mark */
+#entry-list li.checkedEntry {
+    text-decoration: line-through;
+    background: rgb(63, 63, 63);
+    color: #fff;
+}
+
+/* Add type entry styling */
+.activity-type {
+    color: white;
+    margin: 0 45px;
+    /* background-color: rgb(69, 158, 210); */
+    padding: 2px 10px;
+    border-radius: 25px;
+}
+
+/* delete line */
+/* .delete-entry {
+    text-decoration: none;
+} */
+
+
+/* UL border and size */
+#entry-list {
+    max-width: 50%;
+
+}
+
+/* delete button */
+.delete-entry {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+.delete-entry:hover {
+    color: rgb(211, 12, 12);
+    /* background-color: red; */
+    /* border-radius: 50%; */
+}
+
+/* input widths */
+#startTime, #endTime {
+    width: 75px;
+
+}
+#activity {
+    width: 230px;
 }
