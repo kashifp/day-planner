@@ -78,15 +78,15 @@ body {
 
 /* UL border and size */
 #entry-list {
-    max-width: 50%;
+    max-width: 100%;
 
 }
 
 /* delete button */
 .delete-entry {
-    position: absolute;
+    /* position: absolute;
     right: 0;
-    margin-right: 20px;
+    margin-right: 20px; */
 }
 
 .delete-entry:hover {

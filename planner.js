@@ -49,6 +49,10 @@ function addEntry(event) {
 
     let li = document.createElement("li");
 
+    //test
+    // li.className = "row"
+    //
+
     // let checkSpan = document.createElement("span");
     // let checkText = document.createTextNode("✓");
     // checkSpan.appendChild(checkText);
