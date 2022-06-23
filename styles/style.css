@@ -70,11 +70,6 @@ body {
     margin-right: 2em; */
 }
 
-/* delete line */
-/* .delete-entry {
-    text-decoration: none;
-} */
-
 
 /* UL border and size */
 #entry-list {
@@ -84,9 +79,9 @@ body {
 
 /* delete button */
 .delete-entry {
-    /* position: absolute;
+    position: absolute;
     right: 0;
-    margin-right: 20px; */
+    margin-right: 20px;
 }
 
 .delete-entry:hover {
