@@ -8,14 +8,33 @@
 /* Body font */
 body {
     font-family:Arial, Helvetica, sans-serif;
-    margin-left: 5%;
-    /* background-color: green; */
+    /* margin-left: 5%; */
+    /* background-color: rgb(50, 50, 50); */
     
 }
+
+/* Main header (outside titles */
+.outside-title, .mainView h4 {
+    color: white;
+}
+
+/* Custom head bar */
+.custom-head {
+    margin:0;
+    height: 70px;
+    padding-top: 10px;
+    padding-left: 5%;
+    background-color: rgb(104, 176, 210);
+    background: linear-gradient(to left right, blue, navy);
+}
+
 
 /* Main view */
 .mainView {
     margin-left: 0;
+    margin-top: 50px;
+    margin-left: 5%;
+    
     border-radius: 25px;
     padding: 25px;
     background: linear-gradient(to right top, rgb(90, 205, 144), rgb(10, 180, 206));
