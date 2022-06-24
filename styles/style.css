@@ -1,0 +1,168 @@
+/* Everything */
+* {
+    /* background-color: rgb(60, 60, 60);
+    color: white; */
+}
+
+
+/* Body font */
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    /* margin-left: 5%; */
+    /* background-color: rgb(50, 50, 50); */
+    
+}
+
+/* Main header (outside titles */
+.outside-title, .mainView h4 {
+    color: white;
+}
+
+/* Custom head bar */
+.custom-head {
+    margin:0;
+    height: 70px;
+    padding-top: 10px;
+    padding-left: 5%;
+    background-color: rgb(104, 176, 210);
+    background: linear-gradient(to left right, blue, navy);
+}
+
+
+/* Main view */
+.mainView {
+    margin-left: 0;
+    margin-top: 30px;
+    margin-left: 5%;
+    
+    border-radius: 25px;
+    padding: 25px;
+    background: linear-gradient(to right top, rgb(90, 205, 144), rgb(10, 180, 206));
+}
+
+/* List Cover */
+/* #display-entries {
+    margin-top: 10px;
+    width: fit-content;
+    border: solid black 2px;
+    border-radius: 25px;
+    padding-right: 20px;
+    padding-top: 10px;
+
+} */
+
+/* Entry Styling */
+#entry-list li {
+    list-style-type: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: rgb(80, 85, 86);
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* text-decoration: underline; */
+}
+
+#entry-list li:nth-child(odd) {
+    background: #5f6566;
+    color: white;
+}
+
+#entry-list li:hover {
+    background: rgb(6, 90, 123);
+}
+
+/* select input */
+select {
+    padding: 5px 0;
+}
+
+/* Check mark */
+#entry-list li.checkedEntry {
+    text-decoration: line-through;
+    background: rgb(63, 63, 63);
+    color: #fff;
+}
+
+/* Add type entry styling */
+.activity-type {
+    color: white;
+    margin: 0 45px;
+    /* background-color: rgb(69, 158, 210); */
+    padding: 2px 10px;
+    border-radius: 25px;
+    position: absolute;
+    right: 20px;
+}
+
+
+/* UL border and size */
+#entry-list {
+    max-width: 100%;
+    margin-top: 20px;
+    margin-left: -30px;
+}
+
+/* delete button */
+.delete-entry {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+.delete-entry:hover {
+    color: rgb(211, 12, 12);
+    /* background-color: red; */
+    /* border-radius: 50%; */
+}
+
+/* input widths */
+#startTime, #endTime {
+    width: 75px;
+
+}
+#activity {
+    width: 230px;
+}
+
+
+/* Add entry button */
+.btn-entry {
+    color: white;
+    border-color: white;
+}
+.btn-entry:hover {
+    color: rgb(230, 195, 99);
+    /* background-color: aqua; */
+    border-color: rgb(230, 195, 99);
+}
+
+/* table titles */
+.table-title {
+    font-weight: bold;
+    color: white;
+    /* color: rgb(103, 102, 102); */
+}
+#table-type-title {
+    position: absolute;
+    right: 150px;
+    top: 10px;
+}
+#table-activity-title {
+    position: absolute;
+    right: 380px;
+    top: 10px;
+}
+.table-li {
+    min-height: 50px;
+
+}
+

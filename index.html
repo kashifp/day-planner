@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Day Planner</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
-    <h1>Day Planner</h1>
-    <h3 id="title-date"></h3>
+    <div class="custom-head">
+      <h1 class="outside-title">Day Planner</h1>
+      
+    </div>
+    
 
 
     <!-- <div>
@@ -19,35 +23,52 @@
         </form>
     </div> -->
 
+    <div class="mainView container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <h3 class="outside-title" id="title-date"></h3>
+          <!-- <h4>Time - Time: Activity (ex: 8:00 am - 8:30 am: Breakfast)</h4> -->
+          <br>
+          <input id="startTime" type="text" autocomplete="off" placeholder="8:00 am" maxlength="8">
+          <label>-</label>
+          <input id="endTime" type="text" autocomplete="off" placeholder="8:30 am" maxlength="8">
+          <label>:</label>
+          <input id="activity" type="text" autocomplete="off" placeholder="Morning Run" maxlength="30">
+          <select id="type" required>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Exercise">Exercise</option>
+            <option value="Food">Food</option>
+            <option value="Learning">Learning</option>
+            <option value="Social">Social</option>
+            <option value="Work">Work</option>
+          </select>
+          
+          <button class="btn btn-entry" id="add-btn">Add</button>
 
-    <label for="">Time - Time: Activity (ex: 8:00 am - 8:30 am: Breakfast)</label>
-    <br>
-    <input id="startTime" type="text" autocomplete="off" placeholder="8:00 am">
-    <label>-</label>
-    <input id="endTime" type="text" autocomplete="off" placeholder="8:30 am">
-    <label>:</label>
-    <input id="activity" type="text" autocomplete="off" placeholder="Morning Run">
-    <select id="type" required>
-      <option value="Entertainment">Entertainment</option>
-      <option value="Exercise">Exercise</option>
-      <option value="Food">Food</option>
-      <option value="Learning">Learning</option>
-      <option value="Social">Social</option>
-      <option value="Work">Work</option>
-    </select>
+          <ul id="entry-list">
+            <li class="table-li">
+              <!-- <h5 class="table-title">List</h4> -->
+              <span class="table-title" id="table-activity-title">Activity</span>
+              <span class="table-title" id="table-type-title">Type</span>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- <label for=""></label> -->
     
-    <button id="add-btn">+</button>
 
-    <div id="display-entries">
-      <ul id="entry-list">
-
-      </ul>
-    </div>   
+    <!-- <div id="display-entries"> -->
+      
+    <!-- </div>    -->
 
 
-    <br>
-
-    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    
     
 
 
