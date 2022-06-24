@@ -55,11 +55,11 @@ body {
 #entry-list li {
     list-style-type: none;
     font-size: 24px;
-
+    color: white;
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #eee;
+    background: rgb(80, 85, 86);
     font-size: 18px;
     transition: 0.2s;
 
@@ -72,11 +72,12 @@ body {
 }
 
 #entry-list li:nth-child(odd) {
-    background: #f9f9f9;
+    background: #5f6566;
+    color: white;
 }
 
 #entry-list li:hover {
-    background: #ddd;
+    background: rgb(6, 90, 123);
 }
 
 /* select input */
@@ -146,7 +147,8 @@ select {
 /* table titles */
 .table-title {
     font-weight: bold;
-    color: rgb(103, 102, 102);
+    color: white;
+    /* color: rgb(103, 102, 102); */
 }
 #table-type-title {
     position: absolute;
