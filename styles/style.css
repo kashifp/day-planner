@@ -106,7 +106,7 @@ select {
 /* UL border and size */
 #entry-list {
     max-width: 100%;
-    
+    margin-top: 20px;
 }
 
 /* delete button */
@@ -141,4 +141,24 @@ select {
     color: rgb(230, 195, 99);
     /* background-color: aqua; */
     border-color: rgb(230, 195, 99);
+}
+
+/* table titles */
+.table-title {
+    font-weight: bold;
+    color: rgb(103, 102, 102);
+}
+#table-type-title {
+    position: absolute;
+    right: 150px;
+    top: 10px;
+}
+#table-activity-title {
+    position: absolute;
+    right: 380px;
+    top: 10px;
+}
+.table-li {
+    min-height: 50px;
+
 }
