@@ -108,6 +108,7 @@ select {
 #entry-list {
     max-width: 100%;
     margin-top: 20px;
+    margin-left: -30px;
 }
 
 /* delete button */
@@ -164,3 +165,4 @@ select {
     min-height: 50px;
 
 }
+
