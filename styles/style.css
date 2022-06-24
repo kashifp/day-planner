@@ -32,7 +32,7 @@ body {
 /* Main view */
 .mainView {
     margin-left: 0;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 5%;
     
     border-radius: 25px;
@@ -79,6 +79,11 @@ body {
     background: #ddd;
 }
 
+/* select input */
+select {
+    padding: 5px 0;
+}
+
 /* Check mark */
 #entry-list li.checkedEntry {
     text-decoration: line-through;
@@ -100,8 +105,8 @@ body {
 
 /* UL border and size */
 #entry-list {
-    max-width: 120%;
-
+    max-width: 100%;
+    
 }
 
 /* delete button */
@@ -126,7 +131,14 @@ body {
     width: 230px;
 }
 
-/* chart */
-#myChart {
-    
+
+/* Add entry button */
+.btn-entry {
+    color: white;
+    border-color: white;
+}
+.btn-entry:hover {
+    color: rgb(230, 195, 99);
+    /* background-color: aqua; */
+    border-color: rgb(230, 195, 99);
 }
