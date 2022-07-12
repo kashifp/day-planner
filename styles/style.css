@@ -36,6 +36,7 @@ body {
     margin-bottom: 30px;
     border-radius: 25px;
     padding: 25px;
+    
     background: linear-gradient(to right top, rgb(90, 205, 144), rgb(10, 180, 206));
 }
 
