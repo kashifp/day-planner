@@ -15,18 +15,7 @@ function main() {
     let month = date.getMonth();
     let numDate = date.getDate();
     let year = date.getFullYear();
-    let ordinalIndicator = "";
-    let lastDateDigit = numDate % 10;
-    if (lastDateDigit == 1) {
-        ordinalIndicator = "st";
-    } else if (lastDateDigit == 2) {
-        ordinalIndicator = "nd";
-    } else if (lastDateDigit == 3) {
-        ordinalIndicator = "rd";
-    } else {
-        ordinalIndicator = "th";
-    }
-    let displayDate = `${daysOfWeek[day]}, ${monthsOfYear[month]} ${numDate}${ordinalIndicator} ${year}`;
+    let displayDate = `${daysOfWeek[day]}, ${monthsOfYear[month]} ${numDate}, ${year}`;
     document.getElementById("title-date").innerHTML = displayDate;
 }
 
