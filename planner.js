@@ -107,12 +107,12 @@ function displayCompletionChart() {
     if (tasksNum > completeNum) {
         xValues.push("Incomplete");
         yValues.push(tasksNum - completeNum);
-        barColors.push("violet")
+        barColors.push("violet");
     }
     if (completeNum > 0) {
         xValues.push("Complete");
         yValues.push(completeNum);
-        barColors.push("skyblue")
+        barColors.push("skyblue");
     }
 
     let chart = new Chart("compChart", {
