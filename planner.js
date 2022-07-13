@@ -127,7 +127,7 @@ function displayCompletionChart() {
         options: {
           title: {
             display: true,
-            text: "Activity Types"
+            text: "Completion Progress"
           }
         }
     });
