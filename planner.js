@@ -57,6 +57,7 @@ function addEntry(event) {
 
     li.onclick = () => {
         li.classList.toggle("checkedEntry");
+        displayCompletionChart();
     };
 
     let typeSpan = document.createElement("span");
@@ -75,6 +76,7 @@ function addEntry(event) {
     span.onclick = () => {
         li.style.display = "none";
         displayChart();
+        displayCompletionChart();
     };
     
 
@@ -88,6 +90,47 @@ function addEntry(event) {
 
     /* Rendering the pie chart */
     displayChart();
+
+    /* Rendering the completion chart */
+    displayCompletionChart();
+}
+
+function displayCompletionChart() {
+    let xValues = []
+    let yValues = []
+    let barColors = [];
+
+    let completeNum = document.getElementsByClassName("checkedEntry").length;
+    let tasksNum = document.getElementsByClassName("timeName").length;
+    
+    if (tasksNum > completeNum) {
+        xValues.push("Incomplete");
+        yValues.push(tasksNum - completeNum);
+        barColors.push("violet")
+    }
+    if (completeNum > 0) {
+        xValues.push("Complete");
+        yValues.push(completeNum);
+        barColors.push("skyblue")
+    }
+
+    let chart = new Chart("compChart", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Activity Types"
+          }
+        }
+    });
+
 }
 
 function displayChart() {
@@ -96,7 +139,7 @@ function displayChart() {
     let barColors = ["orange", "skyblue", "pink", "rgb(200, 127, 224)", "lightgreen", "rgb(248, 105, 105)"];
 
     let types = document.getElementsByClassName("activity-type");
-
+    // console.log(types.length);
     for (let tSpan of types) {
         // console.log(tSpan.innerHTML);
         if (tSpan.parentElement.style.display != "none") { //only counting elements that are currently displayed
