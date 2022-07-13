@@ -104,15 +104,15 @@ function displayCompletionChart() {
     let completeNum = document.getElementsByClassName("checkedEntry").length;
     let tasksNum = document.getElementsByClassName("timeName").length;
     
-    if (tasksNum > completeNum) {
-        xValues.push("Incomplete");
-        yValues.push(tasksNum - completeNum);
-        barColors.push("violet");
-    }
     if (completeNum > 0) {
         xValues.push("Complete");
         yValues.push(completeNum);
         barColors.push("skyblue");
+    }
+    if (tasksNum > completeNum) {
+        xValues.push("Incomplete");
+        yValues.push(tasksNum - completeNum);
+        barColors.push("violet");
     }
 
     let chart = new Chart("compChart", {
