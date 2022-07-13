@@ -153,14 +153,16 @@ select {
     /* color: rgb(103, 102, 102); */
 }
 #table-type-title {
-    position: absolute;
-    right: 150px;
+    /* position: absolute;
+    right: 150px; */
     /* top: 10px; */
+    margin-left: 185px;
 }
 #table-activity-title {
-    position: absolute;
-    right: 380px;
+    /* position: absolute;
+    right: 380px; */
     /* top: 10px; */
+    margin-left: 60px;
 }
 .table-li {
     min-height: 50px;
