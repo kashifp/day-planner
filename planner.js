@@ -74,7 +74,8 @@ function addEntry(event) {
     
     /* Delete function for li element */
     span.onclick = () => {
-        li.style.display = "none";
+        // li.style.display = "none";
+        li.remove();
         displayChart();
         displayCompletionChart();
     };
